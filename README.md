@@ -64,3 +64,174 @@ Date:   Sat Nov 9 09:53:22 2024 +0530
 
     commit 5 in master
 
+
+EXPT 8:
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 ~ ((v11.0))
+$ cd d:
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d
+$ mkdir v4
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d
+$ cd v4
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4
+$ git init
+Initialized empty Git repository in D:/v4/.git/
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (master)
+$ nano v4.c
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (master)
+$ git add .
+warning: in the working copy of 'v4.c', LF will be replaced by CRLF the next time Git touches it
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (master)
+$ git commit -m "added v4.c in master"
+[master (root-commit) dda4b40] added v4.c in master
+ 1 file changed, 1 insertion(+)
+ create mode 100644 v4.c
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (master)
+$ nano v4.c
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (master)
+$ git add .
+warning: in the working copy of 'v4.c', LF will be replaced by CRLF the next time Git touches it
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (master)
+$ git commit -m "commit 2 in master"
+[master fc71bb0] commit 2 in master
+ 1 file changed, 1 insertion(+)
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (master)
+$ git branch feature
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (feature)
+$ git log
+commit fc71bb0488f7621fe23953076af468e5c89bcc15 (HEAD -> feature, master)
+Author: vedantdoddi <vedantdoddi@gmail.com>
+Date:   Sat Nov 16 10:37:09 2024 +0530
+
+    commit 2 in master
+
+commit dda4b407b39180dd2b4026d75758076da01ac6b9
+Author: vedantdoddi <vedantdoddi@gmail.com>
+Date:   Sat Nov 16 10:36:20 2024 +0530
+
+    added v4.c in master
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (feature)
+$ nano v4a.c
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (feature)
+$ git add v4a.c
+warning: in the working copy of 'v4a.c', LF will be replaced by CRLF the next time Git touches it
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (feature)
+$ git commit -m "commit in feature"
+[feature 77e77f5] commit in feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 v4a.c
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (feature)
+$ nano v4b.c
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (feature)
+$ git add v4b.c
+warning: in the working copy of 'v4b.c', LF will be replaced by CRLF the next time Git touches it
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (feature)
+$ git commit -m "commit of v4b.c in feature"
+[feature 295c682] commit of v4b.c in feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 v4b.c
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (feature)
+$ git log
+commit 295c6823a6f95e6875c83dfc20b39e18d028d385 (HEAD -> feature)
+Author: vedantdoddi <vedantdoddi@gmail.com>
+Date:   Sat Nov 16 10:41:36 2024 +0530
+
+    commit of v4b.c in feature
+
+commit 77e77f55a236060272d1755fc0f2da00c2f859e8
+Author: vedantdoddi <vedantdoddi@gmail.com>
+Date:   Sat Nov 16 10:40:39 2024 +0530
+
+    commit in feature
+
+commit fc71bb0488f7621fe23953076af468e5c89bcc15 (master)
+Author: vedantdoddi <vedantdoddi@gmail.com>
+Date:   Sat Nov 16 10:37:09 2024 +0530
+
+    commit 2 in master
+
+commit dda4b407b39180dd2b4026d75758076da01ac6b9
+Author: vedantdoddi <vedantdoddi@gmail.com>
+Date:   Sat Nov 16 10:36:20 2024 +0530
+
+    added v4.c in master
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (feature)
+$ git checkout master
+Switched to branch 'master'
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (master)
+$ git log
+commit fc71bb0488f7621fe23953076af468e5c89bcc15 (HEAD -> master)
+Author: vedantdoddi <vedantdoddi@gmail.com>
+Date:   Sat Nov 16 10:37:09 2024 +0530
+
+    commit 2 in master
+
+commit dda4b407b39180dd2b4026d75758076da01ac6b9
+Author: vedantdoddi <vedantdoddi@gmail.com>
+Date:   Sat Nov 16 10:36:20 2024 +0530
+
+    added v4.c in master
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (master)
+$ git chery-pick  77e77f55a236060272d1755fc0f2da00c2f859e8
+git: 'chery-pick' is not a git command. See 'git --help'.
+
+The most similar command is
+        cherry-pick
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (master)
+$ git cherry-pick  77e77f55a236060272d1755fc0f2da00c2f859e8
+[master 0b80a6e] commit in feature
+ Date: Sat Nov 16 10:40:39 2024 +0530
+ 1 file changed, 1 insertion(+)
+ create mode 100644 v4a.c
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (master)
+$ git log
+commit 0b80a6e8f6e65346388eed5209c94486bb838205 (HEAD -> master)
+Author: vedantdoddi <vedantdoddi@gmail.com>
+Date:   Sat Nov 16 10:40:39 2024 +0530
+
+    commit in feature
+
+commit fc71bb0488f7621fe23953076af468e5c89bcc15
+Author: vedantdoddi <vedantdoddi@gmail.com>
+Date:   Sat Nov 16 10:37:09 2024 +0530
+
+    commit 2 in master
+
+commit dda4b407b39180dd2b4026d75758076da01ac6b9
+Author: vedantdoddi <vedantdoddi@gmail.com>
+Date:   Sat Nov 16 10:36:20 2024 +0530
+
+    added v4.c in master
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (master)
+$ ls
+v4.c  v4a.c
+
+BLDEA-CSE@DESKTOP-ET8ORPC MINGW64 /d/v4 (master)
+$
